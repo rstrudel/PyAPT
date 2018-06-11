@@ -136,7 +136,7 @@ def write_submit_scripts(task, task_id, parallel_args, n_jobs, task_dir,
                 arg_string = ''
                 for arg, value in sorted(parallel_args[k].items()):
                     if '_POS' in arg:
-                        arg_string += '{} '.format(value)
+                        arg_string += '\'{}\' '.format(value)
                     elif value is None:
                         arg_string += '--{} '.format(arg)
                     else:
